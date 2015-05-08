@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jobs>
+  <job id="mysqlreader_to_mysqlwriter_job">
+    <reader>
+      <plugin>mysqlreader</plugin>
+      <!--
+description:Mysql database's ip address
+mandatory:true
+name:ip
+-->
+      <param key="ip" value="192.168.1.119"/>
+      <!--
+default:3306
+description:Mysql database's port
+mandatory:true
+name:port
+-->
+      <param key="port" value="3306"/>
+      <!--
+description:Mysql database's name
+mandatory:true
+name:dbname
+-->
+      <param key="dbname" value="mojingtest"/>
+      <!--
+description:Mysql database's login name
+mandatory:true
+name:username
+-->
+      <param key="username" value="dreambox"/>
+      <!--
+description:Mysql database's login password
+mandatory:true
+name:password
+-->
+      <param key="password" value="dream613"/>
+      <!--
+default:
+range:
+description:tables to export data, format can support simple regex, table[0-63]
+mandatory:true
+name:tables
+-->
+      <param key="tables" value="mj_object"/>
+      <!--
+default:
+range:
+description:where clause, like 'modified_time > sysdate'
+mandatory:false
+name:where
+-->
+      <param key="where" value=""/>
+      <!--
+default:
+range:
+description:self-defined sql statement
+mandatory:false
+name:sql
+-->
+      <param key="sql" value=""/>
+      <!--
+default:*
+range:
+description:columns to be selected, default is *
+mandatory:false
+name:columns
+-->
+      <param key="columns" value="*"/>
+      <!--
+default:UTF-8
+range:UTF-8|GBK|GB2312
+description:mysql database's encode
+mandatory:false
+name:encoding
+-->
+      <param key="encoding" value="UTF-8"/>
+      <!--
+range:
+description:mysql driver params, starts with no &, e.g. loginTimeOut=3000&yearIsDateType=false
+mandatory:false
+name:mysql.params
+-->
+      <param key="mysql.params" value=""/>
+      <!--
+default:1
+range:1-10
+description:concurrency of the job
+mandatory:false
+name:concurrency
+-->
+      <param key="concurrency" value="1"/>
+    </reader>
+    <writer>
+      <plugin>mysqlwriter</plugin>
+      <!--
+description:Mysql database ip address
+mandatory:true
+name:ip
+-->
+      <param key="ip" value="192.168.1.222"/>
+      <!--
+default:3306
+description:Mysql database port
+mandatory:true
+name:port
+-->
+      <param key="port" value="3306"/>
+      <!--
+description:Mysql database name
+mandatory:true
+name:dbname
+-->
+      <param key="dbname" value="test"/>
+      <!--
+description:Mysql database login username
+mandatory:true
+name:username
+-->
+      <param key="username" value="root"/>
+      <!--
+description:Mysql database login password
+mandatory:true
+name:password
+-->
+      <param key="password" value="123456"/>
+      <!--
+default:
+range:
+description:table to be dumped data into
+mandatory:true
+name:table
+-->
+      <param key="table" value="mj_object"/>
+      <!--
+range:
+description:order of columns
+mandatory:false
+name:colorder
+-->
+      <param key="colorder" value=""/>
+      <!--
+default:UTF-8
+range:UTF-8|GBK|GB2312
+description:
+mandatory:false
+name:encoding
+-->
+      <param key="encoding" value="UTF-8"/>
+      <!--
+description:execute sql before dumping data
+mandatory:false
+name:pre
+-->
+      <param key="pre" value=""/>
+      <!--
+description:execute sql after dumping data
+mandatory:false
+name:post
+-->
+      <param key="post" value=""/>
+      <!--
+default:0
+range:[0-65535]
+description:error limit
+mandatory:false
+name:limit
+-->
+      <param key="limit" value="0"/>
+      <!--
+mandatory:false
+name:set
+-->
+      <param key="set" value=""/>
+      <!--
+default:false
+range:[true/false]
+mandatory:false
+name:replace
+-->
+      <param key="replace" value="false"/>
+      <!--
+range:params1|params2|...
+description:mysql driver params
+mandatory:false
+name:mysql.params
+-->
+      <param key="mysql.params" value=""/>
+      <!--
+default:1
+range:1-100
+description:concurrency of the job
+mandatory:false
+name:concurrency
+-->
+      <param key="concurrency" value="1"/>
+    </writer>
+  </job>
+</jobs>
